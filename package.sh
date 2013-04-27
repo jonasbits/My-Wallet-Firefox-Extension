@@ -12,7 +12,7 @@ WEB_CONTENT="../website/WebContent"
 
 RESOURCE_DIR="$WEB_CONTENT/Resources"
 
-#wget --no-check-certificate -O $EXTENSION_DATA_DIR/wallet.html 'https://blockchain.info/wallet/extension-template?resource_relative=true&type=firefox'
+wget --no-check-certificate -O $EXTENSION_DATA_DIR/wallet.html 'https://blockchain.info/wallet/extension-template?resource_relative=true&type=firefox'
 
 #Copy Favicon
 cp $WEB_CONTENT/favicon.ico $EXTENSION_DATA_DIR/
@@ -71,36 +71,38 @@ cp $RESOURCE_DIR/google_16.png  $EXTENSION_DATA_DIR/Resources/
 cp $RESOURCE_DIR/bootstrap-responsive.min.css  $EXTENSION_DATA_DIR/Resources/
 cp $RESOURCE_DIR/bootstrap.min.css  $EXTENSION_DATA_DIR/Resources/
 cp $RESOURCE_DIR/print.css  $EXTENSION_DATA_DIR/Resources/
-cp $RESOURCE_DIR/overrides.min.css  $EXTENSION_DATA_DIR/Resources/
+cp $RESOURCE_DIR/overrides.css  $EXTENSION_DATA_DIR/Resources/
 cp $RESOURCE_DIR/app-overrides.css  $EXTENSION_DATA_DIR/Resources/
 
 #flags
 mkdir  $EXTENSION_DATA_DIR/Resources/flags/
 cp $RESOURCE_DIR/flags/us.png  $EXTENSION_DATA_DIR/Resources/flags/
 cp $RESOURCE_DIR/flags/gb.png  $EXTENSION_DATA_DIR/Resources/flags/
+cp $RESOURCE_DIR/flags/eu.png  $EXTENSION_DATA_DIR/Resources/flags/
 
 #wallet resource
 mkdir  $EXTENSION_DATA_DIR/Resources/wallet/
 cp $RESOURCE_DIR/wallet/camcanvas.swf  $EXTENSION_DATA_DIR/Resources/wallet/
-cp $RESOURCE_DIR/wallet/shared.min.js  $EXTENSION_DATA_DIR/Resources/wallet/
-cp $RESOURCE_DIR/wallet/bitcoinjs.min.js  $EXTENSION_DATA_DIR/Resources/wallet/
-cp $RESOURCE_DIR/wallet/wallet.min.js  $EXTENSION_DATA_DIR/Resources/wallet/
-cp $RESOURCE_DIR/wallet/signer.min.js  $EXTENSION_DATA_DIR/Resources/wallet/
+cp $RESOURCE_DIR/wallet/shared.js  $EXTENSION_DATA_DIR/Resources/wallet/
+cp $RESOURCE_DIR/wallet/bitcoinjs.js  $EXTENSION_DATA_DIR/Resources/wallet/
+cp $RESOURCE_DIR/wallet/wallet.js  $EXTENSION_DATA_DIR/Resources/wallet/
+cp $RESOURCE_DIR/wallet/signer.js  $EXTENSION_DATA_DIR/Resources/wallet/
 cp $RESOURCE_DIR/wallet/llqrcode.js  $EXTENSION_DATA_DIR/Resources/wallet/
-cp $RESOURCE_DIR/wallet/jquery.qrcode.min.js  $EXTENSION_DATA_DIR/Resources/wallet/
+cp $RESOURCE_DIR/wallet/jquery.qrcode.js  $EXTENSION_DATA_DIR/Resources/wallet/
 cp $RESOURCE_DIR/wallet/qr.code.reader.js  $EXTENSION_DATA_DIR/Resources/wallet/
-cp $RESOURCE_DIR/wallet/import-export.min.js  $EXTENSION_DATA_DIR/Resources/wallet/
-cp $RESOURCE_DIR/wallet/account.min.js  $EXTENSION_DATA_DIR/Resources/wallet/
+cp $RESOURCE_DIR/wallet/import-export.js  $EXTENSION_DATA_DIR/Resources/wallet/
+cp $RESOURCE_DIR/wallet/account.js  $EXTENSION_DATA_DIR/Resources/wallet/
 cp $RESOURCE_DIR/wallet/frame-modal.js  $EXTENSION_DATA_DIR/Resources/wallet/
-cp $RESOURCE_DIR/wallet/address_modal.min.js  $EXTENSION_DATA_DIR/Resources/wallet/
+cp $RESOURCE_DIR/wallet/address_modal.js  $EXTENSION_DATA_DIR/Resources/wallet/
 cp $RESOURCE_DIR/wallet/jquery.min.js  $EXTENSION_DATA_DIR/Resources/wallet/
 cp $RESOURCE_DIR/wallet/bootstrap.min.js  $EXTENSION_DATA_DIR/Resources/wallet/
-cp $RESOURCE_DIR/wallet/blockchainapi.min.js  $EXTENSION_DATA_DIR/Resources/wallet/
+cp $RESOURCE_DIR/wallet/blockchainapi.js  $EXTENSION_DATA_DIR/Resources/wallet/
 cp $RESOURCE_DIR/wallet/firefox.js  $EXTENSION_DATA_DIR/Resources/wallet/
 cp $RESOURCE_DIR/wallet/country_codes.html  $EXTENSION_DATA_DIR/Resources/wallet/
-cp $RESOURCE_DIR/wallet/anonymous-addresses.min.js  $EXTENSION_DATA_DIR/Resources/wallet/
-cp $RESOURCE_DIR/wallet/dicegames.min.js  $EXTENSION_DATA_DIR/Resources/wallet/
+cp $RESOURCE_DIR/wallet/shared-addresses.js  $EXTENSION_DATA_DIR/Resources/wallet/
+cp $RESOURCE_DIR/wallet/dicegames.js  $EXTENSION_DATA_DIR/Resources/wallet/
 cp $RESOURCE_DIR/wallet/mnemonic.js  $EXTENSION_DATA_DIR/Resources/wallet/
+cp $RESOURCE_DIR/wallet/jsuri-1.1.1.js  $EXTENSION_DATA_DIR/Resources/wallet/
 
 #icons
 cp $RESOURCE_DIR/cube48.png  $EXTENSION_DATA_DIR/Resources/

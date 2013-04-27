@@ -1,6 +1,7 @@
+min = false;
+isExtension = true;
 
 $(document).ready(function() {
-
     $.ajax = function(obj) {
         var requests = {};
         var initd = false;
@@ -23,8 +24,6 @@ $(document).ready(function() {
 
         if (!initd) {
             document.body.addEventListener('ajax_response', function() {
-                console.log('Received Response');
-
                 var obj = JSON.parse(document.body.getAttribute('data-ajax-response'));
 
                 var request = requests[obj.request_id];
@@ -33,8 +32,6 @@ $(document).ready(function() {
                 }
 
                 if (obj.status == 200)  {
-                    console.log('Received response data ' + obj.response);
-
                     if (obj.dataType == 'json')
                         request.success(JSON.parse(obj.response));
                     else
@@ -59,8 +56,13 @@ $(document).ready(function() {
         root = data_root;
 
     var data_resource = body.data('resource');
-    if (data_resource)
-        resource = data_resource;
+    if (data_resource) {
+        var path = document.location.pathname;
+        var index = path.lastIndexOf("/") + 1;
+        var filename = path.substr(0, index);
+
+        resource = filename + data_resource;
+    }
 
     $('head').append('<style type="text/css">.external { background: url('+resource+'external.png); }\n span.qrcodeicon span { background: url("'+resource+'qrcode.png"); };</style>');
 });
