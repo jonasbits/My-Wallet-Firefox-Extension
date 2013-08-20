@@ -11,8 +11,14 @@ EXTENSION_DATA_DIR="./extension/resources/blockchain/data"
 WEB_CONTENT="../website/WebContent"
 
 RESOURCE_DIR="$WEB_CONTENT/Resources"
+HTML_DIR="$EXTENSION_DATA_DIR"
 
-wget --no-check-certificate -O $EXTENSION_DATA_DIR/wallet.html 'https://blockchain.info/wallet/extension-template?resource_relative=true&type=firefox'
+array=( fr da de ko hi th it nl es ja pl pt sv ru en el zh-cn ro bg vi id tr sl no hu )
+for i in "${array[@]}"
+do
+	echo $i
+	wget --no-check-certificate -O "$HTML_DIR/$i.html" "https://blockchain.info/$i/wallet/extension-template?resource_relative=true&type=firefox"
+done
 
 #Copy Favicon
 cp $WEB_CONTENT/favicon.ico $EXTENSION_DATA_DIR/
@@ -25,6 +31,7 @@ cp $WEB_CONTENT/img/glyphicons-halflings.png $EXTENSION_DATA_DIR/img/
 #Copy Resources
 rm -r  $EXTENSION_DATA_DIR/Resources/
 mkdir  $EXTENSION_DATA_DIR/Resources/
+cp $RESOURCE_DIR/bug-16.png  $EXTENSION_DATA_DIR/Resources/
 cp $RESOURCE_DIR/facebook.png  $EXTENSION_DATA_DIR/Resources/
 cp $RESOURCE_DIR/facebook14.png  $EXTENSION_DATA_DIR/Resources/
 cp $RESOURCE_DIR/bitcoin-wallet-app.png  $EXTENSION_DATA_DIR/Resources/
@@ -67,6 +74,7 @@ cp $RESOURCE_DIR/yubikey_16.gif  $EXTENSION_DATA_DIR/Resources/
 cp $RESOURCE_DIR/email_16.gif  $EXTENSION_DATA_DIR/Resources/
 cp $RESOURCE_DIR/sms_16.png  $EXTENSION_DATA_DIR/Resources/
 cp $RESOURCE_DIR/google_16.png  $EXTENSION_DATA_DIR/Resources/
+cp $RESOURCE_DIR/paper-wallet-reminder.png $EXTENSION_DATA_DIR/Resources/
 
 cp $RESOURCE_DIR/bootstrap-responsive.min.css  $EXTENSION_DATA_DIR/Resources/
 cp $RESOURCE_DIR/bootstrap.min.css  $EXTENSION_DATA_DIR/Resources/
@@ -82,7 +90,6 @@ cp $RESOURCE_DIR/flags/eu.png  $EXTENSION_DATA_DIR/Resources/flags/
 
 #wallet resource
 mkdir  $EXTENSION_DATA_DIR/Resources/wallet/
-cp $RESOURCE_DIR/wallet/camcanvas.swf  $EXTENSION_DATA_DIR/Resources/wallet/
 cp $RESOURCE_DIR/wallet/shared.js  $EXTENSION_DATA_DIR/Resources/wallet/
 cp $RESOURCE_DIR/wallet/bitcoinjs.js  $EXTENSION_DATA_DIR/Resources/wallet/
 cp $RESOURCE_DIR/wallet/wallet.js  $EXTENSION_DATA_DIR/Resources/wallet/
@@ -103,6 +110,9 @@ cp $RESOURCE_DIR/wallet/shared-addresses.js  $EXTENSION_DATA_DIR/Resources/walle
 cp $RESOURCE_DIR/wallet/dicegames.js  $EXTENSION_DATA_DIR/Resources/wallet/
 cp $RESOURCE_DIR/wallet/mnemonic.js  $EXTENSION_DATA_DIR/Resources/wallet/
 cp $RESOURCE_DIR/wallet/jsuri-1.1.1.js  $EXTENSION_DATA_DIR/Resources/wallet/
+cp $RESOURCE_DIR/wallet/paper-wallet.js  $EXTENSION_DATA_DIR/Resources/wallet/
+cp $RESOURCE_DIR/wallet/jspdf.js $EXTENSION_DATA_DIR/Resources/wallet/
+cp $RESOURCE_DIR/wallet/mnemonic_words_v3.html $EXTENSION_DATA_DIR/Resources/wallet/
 
 #icons
 cp $RESOURCE_DIR/cube48.png  $EXTENSION_DATA_DIR/Resources/

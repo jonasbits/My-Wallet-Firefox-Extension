@@ -36,7 +36,7 @@ function addToolbarButton() {
     btn.addEventListener('click', function() {
         try {
             tabs.open({
-                url : data.url("wallet.html"),
+                url : data.url("index.html"),
                 onReady : function(tab) {
                     var worker = tab.attach({
                         contentScriptFile: data.url("bridge.js")
@@ -53,6 +53,9 @@ function addToolbarButton() {
                             var Request = require("request").Request;
 
                             if (obj.url.indexOf('https://') != 0 && obj.url.indexOf('http://') != 0) {
+
+                                obj.url = obj.url.replace('/blockchain/data/', '');
+
                                 obj.url = data.url(obj.url);
                             }
 
