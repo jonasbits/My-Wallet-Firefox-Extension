@@ -9,16 +9,18 @@ cd 'My-Wallet-Firefox-Extension'
 EXTENSION_DATA_DIR="./extension/resources/blockchain/data"
 
 WEB_CONTENT="../website/WebContent"
-
+DOWNLOAD_HTML=true;
 RESOURCE_DIR="$WEB_CONTENT/Resources"
 HTML_DIR="$EXTENSION_DATA_DIR"
 
-array=( fr da de ko hi th it nl es ja pl pt sv ru en el zh-cn ro bg vi id tr sl no hu )
-for i in "${array[@]}"
-do
-	echo $i
-	wget --no-check-certificate -O "$HTML_DIR/$i.html" "https://blockchain.info/$i/wallet/extension-template?resource_relative=true&type=firefox"
-done
+if $DOWNLOAD_HTML ; then
+	array=( fr da de ko hi th it nl es ja pl pt sv ru en el zh-cn ro bg vi id tr sl no hu )
+	for i in "${array[@]}"
+	do
+		echo $i
+		wget --no-check-certificate -O "$HTML_DIR/$i.html" "https://blockchain.info/$i/wallet/extension-template?resource_relative=true&type=firefox"
+	done
+fi
 
 #Copy Favicon
 cp $WEB_CONTENT/favicon.ico $EXTENSION_DATA_DIR/
@@ -113,6 +115,7 @@ cp $RESOURCE_DIR/wallet/jsuri-1.1.1.js  $EXTENSION_DATA_DIR/Resources/wallet/
 cp $RESOURCE_DIR/wallet/paper-wallet.js  $EXTENSION_DATA_DIR/Resources/wallet/
 cp $RESOURCE_DIR/wallet/jspdf.js $EXTENSION_DATA_DIR/Resources/wallet/
 cp $RESOURCE_DIR/wallet/mnemonic_words_v3.html $EXTENSION_DATA_DIR/Resources/wallet/
+cp $RESOURCE_DIR/wallet/filesaver.js $EXTENSION_DATA_DIR/Resources/wallet/
 
 #icons
 cp $RESOURCE_DIR/cube48.png  $EXTENSION_DATA_DIR/Resources/

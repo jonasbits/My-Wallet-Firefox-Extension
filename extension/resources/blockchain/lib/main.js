@@ -59,8 +59,6 @@ function addToolbarButton() {
                                 obj.url = data.url(obj.url);
                             }
 
-                            console.log('URL ' + obj.url);
-
                             // Be a good consumer and check for rate limiting before doing more.
                             var request = Request({
                                 url: obj.url,
