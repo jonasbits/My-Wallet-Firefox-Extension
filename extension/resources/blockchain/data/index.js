@@ -23,6 +23,8 @@ try {
     if (language && contains(available, language)) {
         sendToLanguage(language);
     } else {
+        localStorage.removeItem('language');
+
         sendToLanguage('en');
     }
 } catch (e) {

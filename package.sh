@@ -18,7 +18,7 @@ if $DOWNLOAD_HTML ; then
 	for i in "${array[@]}"
 	do
 		echo $i
-		wget --no-check-certificate -O "$HTML_DIR/$i.html" "https://blockchain.info/$i/wallet/extension-template?resource_relative=true&type=firefox"
+		wget --no-check-certificate -O "$HTML_DIR/$i.html" "http://local.blockchain.info:8080/$i/wallet/extension-template?resource_relative=true&type=firefox"
 	done
 fi
 
